@@ -18,7 +18,7 @@ export const ShapeTop = () => {
           height="149"
           rx="19.5"
           stroke="#33CCCC"
-          stroke-opacity="0.16"
+          strokeOpacity="0.16"
         />
         <rect
           x="0.621094"
@@ -27,7 +27,7 @@ export const ShapeTop = () => {
           height="200"
           rx="10"
           fill="#33CCCC"
-          fill-opacity="0.08"
+          fillOpacity="0.08"
         />
       </svg>
     </SvgProvider>

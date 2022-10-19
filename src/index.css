@@ -11,3 +11,50 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
+
+.ant-checkbox .ant-checkbox-inner {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #33cccc;
+}
+
+.ant-checkbox-disabled .ant-checkbox-inner {
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  border-color: gray;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-color: red;
+}
+.ant-checkbox-checked .ant-checkbox-inner::after {
+  width: 7px;
+  height: 11px;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #33cccc; 
+}
+.rpv-default-layout-body::-webkit-scrollbar {
+  /* display: none; */
+  width: 5px !important;
+  height: 5px;
+}
+.rpv-default-layout-body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+

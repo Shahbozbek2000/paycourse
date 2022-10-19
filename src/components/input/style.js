@@ -10,6 +10,7 @@ export const Input = styled.input`
   font-family: 'Rubik', sans-serif;
   box-sizing: border-box;
   outline: none;
+  color:  #313131 !important;
   margin-bottom: 16px !important;
   text-indent: 12px;
   transition: all .3s ease;
@@ -26,7 +27,7 @@ export const Input = styled.input`
   }
   &:focus {
     border: 1px solid #33CCCC;
-  }
+     }
 `;
 export const FormGroupProvider = styled.div`
   display: flex;

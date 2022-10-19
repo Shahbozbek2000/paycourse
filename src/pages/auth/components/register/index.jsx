@@ -4,7 +4,6 @@ import { Form, FormBody, FormHeader, FormProvider, FormRow } from './style'
 import { useForm, Controller } from 'react-hook-form'
 import { InputComponent } from 'components/input/controllerInput'
 import { Error, Label } from 'styles/globalStyles'
-import { CustomMask } from 'components/mask/customMask'
 import { CrudButton } from 'components/button'
 import { useAuth } from '../hooks/useAuth'
 import Cookies from 'js-cookie'
@@ -12,6 +11,8 @@ import { Token } from 'services/token'
 import { useNavigate } from 'react-router-dom'
 import { ShapeTop } from 'assets/svg/shape-top'
 import { ShapeBottom } from 'assets/svg/shape-bottom'
+import { PhoneMask } from 'components/mask'
+import { InfoCircleFilled } from '@ant-design/icons'
 
 const RegisterForm = () => {
   const {
@@ -29,8 +30,9 @@ const RegisterForm = () => {
       navigate('/')
     }
     setToken(token)
+    // eslint-disable-next-line
   }, [])
-
+console.log(errors, 'errors')
   return (
     <FormProvider>
       <ShapeTop />
@@ -50,12 +52,15 @@ const RegisterForm = () => {
                   nameProps="name"
                   plProps="Имя"
                   label="Имя*"
+                  errors={errors}
                   className={
                     errors && errors?.hasOwnProperty('name') && 'input-error'
                   }
                 />
                 {errors && errors?.hasOwnProperty('name') && (
-                  <Error>Пожалуйста, введите имя!</Error>
+                  <Error>
+                    <InfoCircleFilled /> Пожалуйста, введите имя!
+                  </Error>
                 )}
               </Col>
               <Col span={24} md={24}>
@@ -71,7 +76,10 @@ const RegisterForm = () => {
                   }
                 />
                 {errors && errors?.hasOwnProperty('surname') && (
-                  <Error>Пожалуйста, введите фамилия!</Error>
+                  <Error>
+                    <InfoCircleFilled />
+                    Пожалуйста, введите фамилия!
+                  </Error>
                 )}
               </Col>
               <Col span={24} md={24}>
@@ -89,31 +97,34 @@ const RegisterForm = () => {
                   }
                 />
                 {errors && errors?.hasOwnProperty('last_name') && (
-                  <Error>Пожалуйста, введите oтчество!</Error>
+                  <Error>
+                    <InfoCircleFilled />
+                    Пожалуйста, введите oтчество!
+                  </Error>
                 )}
               </Col>
               <Col span={24} md={24}>
                 <Label>Контактный телефон *</Label>
-                <CustomMask
+                <PhoneMask
                   Controller={Controller}
                   control={control}
                   nameProps="phone"
                   required={true}
-                  mask="+998 (11) 111-11-11"
-                  title="Phone"
-                  placeholder="Контактний телефон"
+                  errors={errors}
                   className={
                     errors && errors?.hasOwnProperty('phone') && 'input-error'
                   }
                 />
                 {errors && errors?.hasOwnProperty('phone') && (
-                  <Error>Пожалуйста, введите контактний телефон!</Error>
+                  <Error>
+                    <InfoCircleFilled /> 
+                    Пожалуйста, введите контактний телефон!</Error>
                 )}
               </Col>
               <Col span={24} md={24}>
                 <CrudButton
                   type="submit"
-                  name="Далее"
+                  name="Регистрация"
                   disabled={isLoading}
                   isLoading={isLoading}
                 />

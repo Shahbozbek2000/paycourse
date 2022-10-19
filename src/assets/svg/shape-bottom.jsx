@@ -18,9 +18,9 @@ export const ShapeBottom = () => {
           height="178"
           rx="19"
           stroke="#33CCCC"
-          stroke-opacity="0.16"
-          stroke-width="2"
-          stroke-dasharray="8 8"
+          strokeOpacity="0.16"
+          strokeWidth="2"
+          strokeDasharray="8 8"
         />
         <rect
           x="22.8047"
@@ -29,7 +29,7 @@ export const ShapeBottom = () => {
           height="135"
           rx="10"
           fill="#33CCCC"
-          fill-opacity="0.08"
+          fillOpacity="0.08"
         />
       </svg>
     </SvgBottomProvider>

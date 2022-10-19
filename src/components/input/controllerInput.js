@@ -12,7 +12,8 @@ export function InputComponent({
   type = 'text',
   minLength = 2,
   readOnly,
-  style
+  style,
+  errors
 }) {
   return (
     <>
@@ -40,6 +41,7 @@ export function InputComponent({
               onBlur={onBlur}
               readOnly={readOnly}
               style={style}
+              errors={errors}
             />
           </FormGroupProvider>
         )}

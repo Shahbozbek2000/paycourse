@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Register from 'pages/auth/container/page';
-import Home from 'pages/home/container/page';
 import { Toaster } from 'react-hot-toast';
+const Register = lazy(() => import('pages/auth/container/page'))
+const Home = lazy(() => import('pages/home/container/page'))
 
 function App() {
   return (

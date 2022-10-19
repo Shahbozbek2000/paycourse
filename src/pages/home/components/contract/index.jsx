@@ -1,12 +1,22 @@
-import React from 'react';
-import Icon from 'assets/images/contract.jpg'
-import { ContractProvider } from './style';
+import React, { memo } from 'react'
+import { Checkbox } from 'antd'
+import { ContractProvider, HasChecked } from './style'
+import { PdfViewer } from 'components/pdf-viewer'
 
-export const Contract = () => {
-   return (
-      <ContractProvider>
-         <img src={Icon} alt='icon' />
-      </ContractProvider>
-   );
+const Contract = ({ hasChecked, setHasChecked }) => {
+  const onChange = (e) => {
+    setHasChecked(e.target.checked)
+  }
+  return (
+    <ContractProvider>
+      <PdfViewer/>
+      <HasChecked>
+        <Checkbox checked={hasChecked} onChange={onChange}>
+          Я согласен
+        </Checkbox>
+      </HasChecked>
+    </ContractProvider>
+  )
 }
 
+export default memo(Contract)

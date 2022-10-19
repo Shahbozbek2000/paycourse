@@ -14,7 +14,7 @@ export const useAuth = () => {
             name: data.name,
             surname: data.surname,
             last_name: data.last_name,
-            phone: data.phone,
+            phone: `+998${data.phone}`,
             tos: true
          }
          setIsLoading(true)

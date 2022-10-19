@@ -13,4 +13,9 @@ height: 38px;
    position: absolute;
    right: 60px;
 }
+@media (max-width: 450px) {
+   & > div {
+      right: 20px;
+   }
+}
 `

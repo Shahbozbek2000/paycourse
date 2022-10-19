@@ -1,27 +1,30 @@
 .input-group {
    width: 100%;
    margin-top: 5px;
-   margin-bottom: 10px;
+   margin-bottom: 12px;
    overflow: hidden;
    position: relative;
    display: flex;
    flex-wrap: wrap;
-   border-radius: 4px;
+   border-radius: 6px;
    align-items: stretch;
-   border: 1px solid #BCC6D4;
+   border: 1px solid #dadada;
+   cursor: pointer;
 }
 
 
 .error {
+   width: 100%;
    margin-top: 5px;
-   margin-bottom: 10px;
+   margin-bottom: 12px;
    overflow: hidden;
    position: relative;
    display: flex;
-   border-radius: 10px;
+   flex-wrap: wrap;
+   border-radius: 6px;
    align-items: stretch;
-   border: 1px solid #f00;
-   width: 370px;
+   border: 1px solid #e54e53;
+   cursor: pointer;
 }
 
 .input-group-prepend>.input-group-text:first-child {
@@ -34,9 +37,10 @@
    font-size: 14px;
 }
 
+
 .input-group .form-control-new,
 .error .form-control-new {
-   border-radius: 10px;
+   border-radius: 6px;
    display: block;
    padding: 0.375rem 0.75rem;
    line-height: 1.5;
@@ -47,13 +51,15 @@
    margin-left: 0px !important;
    background-color: transparent !important;
    height: 38px;
+   outline: none !important;
    border: none !important;
    padding-left: 7px;
 }
 
-
-.input-group .input-group-prepend {
-   display: flex;
+.input-group .input-group-prepend,
+.error .input-group-prepend {
+   display: flex; 
+   align-items: center;
 }
 
 .input-group input:focus-visible {
@@ -87,5 +93,6 @@
 
    .input-group .form-control-new {
       font-size: 16px !important;
+      padding: 0 !important;
    }
 }

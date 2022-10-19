@@ -18,6 +18,7 @@ export const Form = styled.form`
   min-height: 450px;
   background-color: ${systemColors.mainWhite};
   box-shadow: ${systemColors.formShadow};
+  /* box-shadow: 0 15px 20px rgb(0 0 0 / 5%); */
   border-radius: 6px;
   @media (max-width: 451px) {
     width: 350px;

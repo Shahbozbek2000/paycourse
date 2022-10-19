@@ -1,17 +1,27 @@
 import React from 'react'
 import Click from 'assets/images/click.png'
-import { ClickWrapper } from './style'
+import { ClickWrapper, PaymentProvider } from './style'
 import Payme from 'assets/images/payme.svg'
 
-export const PaymentMethods = () => {
+export const PaymentMethods = ({ hasChecked }) => {
   return (
-    <>
-      <ClickWrapper>
-        <img src={Click} alt="click" />
-      </ClickWrapper>
-      <ClickWrapper style={{ paddingTop: 18 }}>
-        <img src={Payme} alt="Payme" />
-      </ClickWrapper>
-    </>
+    <PaymentProvider>
+      {!hasChecked ? (
+        <h3>Читайте договор перед оплатой!</h3>
+      ) : (
+        <>
+          <ClickWrapper disabled={!hasChecked} hasChecked={hasChecked}>
+            <img src={Click} alt="click" />
+          </ClickWrapper>
+          <ClickWrapper
+            style={{ paddingTop: 18 }}
+            disabled={!hasChecked}
+            hasChecked={hasChecked}
+          >
+            <img src={Payme} alt="Payme" />
+          </ClickWrapper>
+        </>
+      )}
+    </PaymentProvider>
   )
 }
