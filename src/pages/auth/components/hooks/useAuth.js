@@ -21,7 +21,7 @@ export const useAuth = () => {
          let response = await authApi.login(payload)
          toast.success("Вы успешно вошли в систему")
          Cookies.set(Token, response?.token);
-         navigate('/')
+         navigate('/main')
          setIsLoading(false)
       } catch (e) {
          console.log(e)

@@ -11,6 +11,9 @@ margin-top: 16px;
 @media (max-width: 450px) {
    width: auto;
    margin: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 `
 
@@ -31,6 +34,9 @@ outline:none;
 transition:all .4s ease-in-out;
 box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 margin: 16px 0;
+&.payme-btn {
+   padding-top: 18px;
+}
 &:nth-child(2) {
    margin-left: 16px;
 }
@@ -51,6 +57,20 @@ img{
    height:60px;
    object-fit:contain;
    object-position:center;
+}
+@media (max-width: 450px) {
+   padding:32px 24px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   &:nth-child(2) {
+      margin-left: 0;
+   }
+   &.payme-btn {
+   padding-top: 32px;
+   padding-bottom: 32px;
+   }
 }
 `
 

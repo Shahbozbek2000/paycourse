@@ -4,4 +4,5 @@ export const systemColors = {
    mainWhite: '#fff',
    errorColor: '#e54e53',
    erorShadow: '#faaeb1',
+   btnColor: '#33cccc'
 }

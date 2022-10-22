@@ -21,8 +21,11 @@ border: 1px solid transparent;
 transition: all .3s;
 /* &.login-btn { */
   margin-top: 16px;
-  margin-bottom: 0;
+  margin-bottom: 34px;
 /* } */
+&.login-btn {
+  margin-bottom: 0;
+}
 &:disabled {
    opacity: 0.5;
 }

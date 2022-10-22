@@ -3,18 +3,19 @@ import { Col } from 'antd'
 import { Form, FormBody, FormHeader, FormProvider, FormRow } from './style'
 import { useForm, Controller } from 'react-hook-form'
 import { InputComponent } from 'components/input/controllerInput'
-import { Error, Footer, Label } from 'styles/globalStyles'
+import { Error, Label } from 'styles/globalStyles'
 import { CrudButton } from 'components/button'
 import { useAuth } from '../hooks/useAuth'
 import Cookies from 'js-cookie'
 import { Token } from 'services/token'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { PhoneMask } from 'components/mask'
 import { InfoCircleFilled } from '@ant-design/icons'
 
 const RegisterForm = () => {
   const {
     control,
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm()
@@ -25,12 +26,11 @@ const RegisterForm = () => {
   useEffect(() => {
     let token = Cookies.get(Token)
     if (token) {
-      navigate('/')
+      navigate('/main')
     }
     setToken(token)
     // eslint-disable-next-line
   }, [])
-
   return (
     <FormProvider>
       {!token ? (
@@ -114,8 +114,9 @@ const RegisterForm = () => {
                 />
                 {errors && errors?.hasOwnProperty('phone') && (
                   <Error>
-                    <InfoCircleFilled /> 
-                    Пожалуйста, введите контактний телефон!</Error>
+                    <InfoCircleFilled />
+                    Пожалуйста, введите контактний телефон!
+                  </Error>
                 )}
               </Col>
               <Col span={24} md={24}>
@@ -124,19 +125,26 @@ const RegisterForm = () => {
                   Controller={Controller}
                   control={control}
                   nameProps="password"
-                  plProps="Пароль"
-                  type='password'
+                  plProps="Пароль: Не менее 7 символов"
+                  type="password"
                   label="Имя*"
                   errors={errors}
                   className={
-                    errors && errors?.hasOwnProperty('password') && 'input-error'
+                    errors &&
+                    errors?.hasOwnProperty('password') &&
+                    'input-error'
                   }
                 />
-                {errors && errors?.hasOwnProperty('password') && (
+                {(errors && errors?.hasOwnProperty('password') && (
                   <Error>
                     <InfoCircleFilled /> Пожалуйста, введите пароль!
                   </Error>
-                )}
+                )) ||
+                  (watch('password')?.length <= 6 && (
+                    <Error>
+                      <InfoCircleFilled /> Не менее 7 символов!
+                    </Error>
+                  ))}
               </Col>
               <Col span={24} md={24}>
                 <CrudButton
@@ -145,7 +153,7 @@ const RegisterForm = () => {
                   disabled={isLoading}
                   isLoading={isLoading}
                 />
-                <Footer>У вас уже есть аккаунт? <Link to='/login'>Войти вместо этого</Link></Footer>
+                {/* <Footer>У вас уже есть аккаунт? <Link to='/login'>Войти вместо этого</Link></Footer> */}
               </Col>
             </FormRow>
           </FormBody>

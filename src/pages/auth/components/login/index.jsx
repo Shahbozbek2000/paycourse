@@ -21,6 +21,7 @@ import { InfoCircleFilled } from '@ant-design/icons'
 const Login = () => {
   const {
     control,
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm()
@@ -31,7 +32,7 @@ const Login = () => {
   useEffect(() => {
     let token = Cookies.get(Token)
     if (token) {
-      navigate('/')
+      navigate('/main')
     }
     setToken(token)
     // eslint-disable-next-line
@@ -40,7 +41,7 @@ const Login = () => {
   return (
     <FormProvider>
       {!token ? (
-        <Form className='login-form' onSubmit={handleSubmit(onSubmit)}>
+        <Form className="login-form" onSubmit={handleSubmit(onSubmit)}>
           <FormHeader>
             <h1>С1 вместе с РУДН</h1>
             <p>Пройти регистрацию</p>
@@ -72,10 +73,10 @@ const Login = () => {
                   Controller={Controller}
                   control={control}
                   nameProps="password"
-                  type='password'
-                  plProps="Пароль"
+                  type="password"
+                  plProps="Пароль: Не менее 7 символов"
                   label="Имя*"
-                  autoComplete='new-password'
+                  autoComplete="new-password"
                   errors={errors}
                   className={
                     errors &&
@@ -83,21 +84,30 @@ const Login = () => {
                     'input-error'
                   }
                 />
-                {errors && errors?.hasOwnProperty('password') && (
+                {(errors && errors?.hasOwnProperty('password') && (
                   <Error>
                     <InfoCircleFilled /> Пожалуйста, введите пароль!
                   </Error>
-                )}
+                )) ||
+                  (watch('password')?.length <= 6 && (
+                    <Error>
+                      <InfoCircleFilled /> Не менее 7 символов!
+                    </Error>
+                  ))
+                }
               </Col>
               <Col span={24} md={24}>
                 <CrudButton
                   type="submit"
                   name="Вход"
-                  className='login-btn'
+                  className="login-btn"
                   disabled={isLoading}
                   isLoading={isLoading}
                 />
-                <Footer>Новое на нашей платформе? <Link to='/register'>Завести аккаунт</Link></Footer>
+                <Footer>
+                  Новое на нашей платформе?{' '}
+                  <Link to="/register">Завести аккаунт</Link>
+                </Footer>
               </Col>
             </FormRow>
           </FormBody>
