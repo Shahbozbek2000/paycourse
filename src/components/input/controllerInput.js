@@ -13,7 +13,8 @@ export function InputComponent({
   minLength = 2,
   readOnly,
   style,
-  errors
+  errors,
+  autoComplete='off'
 }) {
   return (
     <>
@@ -42,6 +43,7 @@ export function InputComponent({
               readOnly={readOnly}
               style={style}
               errors={errors}
+              autoComplete={autoComplete}
             />
           </FormGroupProvider>
         )}

@@ -78,13 +78,13 @@
 }
 @media screen and (max-width: 576px) {
    .error {
-      width: 320px;
+      width: 100%;
    }
 }
 
 @media screen and (max-width: 370px) {
    .error {
-      width: 250px;
+      width: 100%;
    }
 
    .input-group-prepend .input-group-text {

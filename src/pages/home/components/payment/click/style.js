@@ -13,6 +13,13 @@ margin-top: 16px;
    margin: 0;
 }
 `
+
+export const Image = styled.img`
+width: 250px !important;
+@media (max-width: 450px) {
+   margin: auto;
+}
+`
 export const ClickWrapper = styled.button`
 width:280px;
 border:2px solid transparent;

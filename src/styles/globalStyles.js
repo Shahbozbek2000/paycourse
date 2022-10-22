@@ -6,7 +6,7 @@ export const Error = styled.div`
   font-size: 12px;
   padding: 6px 8px;
   text-align: left;
-  margin-top: -8px;
+  margin-top: 0px;
   background-color: rgb(235, 238, 242);
   border-radius: 6px;
   color: rgb(252, 7, 7);
@@ -25,3 +25,7 @@ export const Label = styled.label`
   text-align: left;
   color: rgba(0, 0, 0, .8);
 `;
+
+export const Footer = styled.div`
+  margin: 8px 0 32px 0;
+`

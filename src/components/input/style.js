@@ -11,7 +11,7 @@ export const Input = styled.input`
   box-sizing: border-box;
   outline: none;
   color:  #313131 !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 8px !important;
   text-indent: 12px;
   transition: all .3s ease;
   &.input-error {

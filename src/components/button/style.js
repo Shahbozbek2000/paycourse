@@ -8,8 +8,8 @@ display: inline-block;
 padding: 8px 16px;
 height: 38px;
 width: 100%;
-margin: 16px 0;
-margin-bottom: 35px;
+  /* margin: 16px 0;
+  margin-bottom: 35px; */
 cursor: pointer;
 font-family: 'Rubik', sans-serif !important;
 border-radius: 6px;
@@ -19,6 +19,10 @@ font-family: 'Poppins', sans-serif;
 font-size: 14px;
 border: 1px solid transparent;
 transition: all .3s;
+/* &.login-btn { */
+  margin-top: 16px;
+  margin-bottom: 0;
+/* } */
 &:disabled {
    opacity: 0.5;
 }

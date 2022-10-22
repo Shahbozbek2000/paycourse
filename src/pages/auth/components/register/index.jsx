@@ -3,14 +3,12 @@ import { Col } from 'antd'
 import { Form, FormBody, FormHeader, FormProvider, FormRow } from './style'
 import { useForm, Controller } from 'react-hook-form'
 import { InputComponent } from 'components/input/controllerInput'
-import { Error, Label } from 'styles/globalStyles'
+import { Error, Footer, Label } from 'styles/globalStyles'
 import { CrudButton } from 'components/button'
 import { useAuth } from '../hooks/useAuth'
 import Cookies from 'js-cookie'
 import { Token } from 'services/token'
-import { useNavigate } from 'react-router-dom'
-import { ShapeTop } from 'assets/svg/shape-top'
-import { ShapeBottom } from 'assets/svg/shape-bottom'
+import { Link, useNavigate } from 'react-router-dom'
 import { PhoneMask } from 'components/mask'
 import { InfoCircleFilled } from '@ant-design/icons'
 
@@ -32,10 +30,9 @@ const RegisterForm = () => {
     setToken(token)
     // eslint-disable-next-line
   }, [])
-console.log(errors, 'errors')
+
   return (
     <FormProvider>
-      <ShapeTop />
       {!token ? (
         <Form onSubmit={handleSubmit(onSubmit)}>
           <FormHeader>
@@ -50,7 +47,7 @@ console.log(errors, 'errors')
                   Controller={Controller}
                   control={control}
                   nameProps="name"
-                  plProps="Имя"
+                  plProps="Имя (по паспорту)"
                   label="Имя*"
                   errors={errors}
                   className={
@@ -69,7 +66,7 @@ console.log(errors, 'errors')
                   Controller={Controller}
                   control={control}
                   nameProps="surname"
-                  plProps="Фамилия"
+                  plProps="Фамилия (по паспорту)"
                   label="фамилия*"
                   className={
                     errors && errors?.hasOwnProperty('surname') && 'input-error'
@@ -88,7 +85,7 @@ console.log(errors, 'errors')
                   Controller={Controller}
                   control={control}
                   nameProps="last_name"
-                  plProps="Отчество"
+                  plProps="Отчество (по паспорту)"
                   label="Имя*"
                   className={
                     errors &&
@@ -122,18 +119,38 @@ console.log(errors, 'errors')
                 )}
               </Col>
               <Col span={24} md={24}>
+                <Label>Пароль *</Label>
+                <InputComponent
+                  Controller={Controller}
+                  control={control}
+                  nameProps="password"
+                  plProps="Пароль"
+                  type='password'
+                  label="Имя*"
+                  errors={errors}
+                  className={
+                    errors && errors?.hasOwnProperty('password') && 'input-error'
+                  }
+                />
+                {errors && errors?.hasOwnProperty('password') && (
+                  <Error>
+                    <InfoCircleFilled /> Пожалуйста, введите пароль!
+                  </Error>
+                )}
+              </Col>
+              <Col span={24} md={24}>
                 <CrudButton
                   type="submit"
                   name="Регистрация"
                   disabled={isLoading}
                   isLoading={isLoading}
                 />
+                <Footer>У вас уже есть аккаунт? <Link to='/login'>Войти вместо этого</Link></Footer>
               </Col>
             </FormRow>
           </FormBody>
         </Form>
       ) : null}
-      <ShapeBottom />
     </FormProvider>
   )
 }

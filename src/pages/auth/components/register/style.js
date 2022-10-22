@@ -4,22 +4,25 @@ import { Row } from 'antd'
 
 
 export const FormProvider = styled.div`
-  position: relative;
-  width: 428px;
-  min-height:450px;
+  height:100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: auto;
+  padding: 20px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 export const Form = styled.form`
-  position: absolute;
-  z-index: 2;
   width: 428px;
   min-height: 450px;
   background-color: ${systemColors.mainWhite};
   box-shadow: ${systemColors.formShadow};
-  /* box-shadow: 0 15px 20px rgb(0 0 0 / 5%); */
   border-radius: 6px;
+  &.login-form {
+    min-height: auto;
+  }
   @media (max-width: 451px) {
     width: 350px;
   }
