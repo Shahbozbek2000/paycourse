@@ -1,18 +1,45 @@
-import React from 'react'
-import { DownLoadExcel, Form, Image, NavbarBrand, NavbarProvider } from './style'
+import React, { useEffect, useState } from 'react'
+import {
+  DownLoadExcel,
+  Form,
+  Image,
+  MobileIcon,
+  NavbarBrand,
+  NavbarProvider,
+  NavMenu,
+  NavTitle,
+} from './style'
 import Logo from 'assets/images/logo.png'
 import { DownloadOutlined } from '@ant-design/icons'
 import { Container } from 'pages/home/container/style'
 import Calendar from 'components/calendar'
 import { Controller, useForm } from 'react-hook-form'
 import { useMutateExcel } from './useMutateExcel'
+import { Sling as Hamburger } from 'hamburger-react'
+import { systemColors } from 'styles/colors'
+import { Logout } from 'components/logout'
 
 export const Navbar = () => {
-  const {
-    control,
-    handleSubmit,
-  } = useForm();
- const onSubmit = useMutateExcel()
+  const { control, handleSubmit } = useForm()
+  const onSubmit = useMutateExcel()
+  const [click, setClick] = useState(false)
+  const [button, setButton] = useState(true)
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false)
+    } else {
+      setButton(true)
+    }
+  }
+  useEffect(() => {
+    showButton()
+  }, [])
+  window.addEventListener('resize', showButton)
+
+  const handleClick = () => {
+    setClick(!click)
+  }
 
   return (
     <NavbarProvider>
@@ -20,21 +47,38 @@ export const Navbar = () => {
         <NavbarBrand>
           <Image src={Logo} alt="logo" />
         </NavbarBrand>
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Calendar
-            Controller={Controller}
-            control={control}
-            nameProps="date"
-            picker="date"
-            plProps="dd/mm/yyyy"
-            format="DD.MM.YYYY"
-            required={true}
-            className='excel-calendar'
+        <MobileIcon onClick={handleClick} click={click}>
+          <Hamburger
+            duration={0.4}
+            rounded
+            className="hamburger"
+            size={25}
+            color={`${systemColors.btnColor}`}
+            toggled={click}
+            toggle={setClick}
           />
-          <DownLoadExcel type='submit'>
-            Загрузка данных <DownloadOutlined />
-          </DownLoadExcel>
-        </Form>
+        </MobileIcon>
+        <NavMenu click={click}>
+          <NavTitle>
+            Познокомностъ прохожения тестирований С1 <span>Без очереди</span>{' '}
+          </NavTitle>
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <Calendar
+              Controller={Controller}
+              control={control}
+              nameProps="date"
+              picker="date"
+              plProps="dd/mm/yyyy"
+              format="DD.MM.YYYY"
+              required={true}
+              className="excel-calendar"
+            />
+            <DownLoadExcel type="submit">
+              Загрузка данных <DownloadOutlined />
+            </DownLoadExcel>
+          </Form>
+        </NavMenu>
+        <Logout />
       </Container>
     </NavbarProvider>
   )

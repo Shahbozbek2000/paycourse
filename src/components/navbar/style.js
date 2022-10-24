@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { systemColors } from "styles/colors";
 
 export const NavbarProvider = styled.div`
+ position: sticky;
+ left: 0;
+ top: 0;
+ z-index: 1000;
  width: 100%;
  margin: 0px auto;
  display: flex;
@@ -10,8 +14,6 @@ export const NavbarProvider = styled.div`
  margin-bottom: 32px;
  background-color: ${systemColors.mainWhite};
  box-shadow: 0 5px 5px rgb(0 0 0 / 5%);
-
-
  @media (max-width: 400px) {
     align-items: center;
    }
@@ -77,4 +79,78 @@ display: flex;
    height: 35px;
   }
 }
+`
+
+export const MobileIcon = styled.div`
+  display: none;
+  width: 20px;
+  svg {
+    width: 18px;
+    font-weight: lighter !important;
+  }
+  @media screen and (max-width: 960px) {
+    display: block;
+    position: absolute;
+    width: 20px;
+    color: black;
+    top: -2px;
+    right: 20px;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.5s linear;
+  }
+`;
+
+
+export const NavMenu = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  z-index: 0;
+  @media screen and (max-width: 960px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 35vh;
+    padding: 0;
+    z-index: -10;
+    top:80px;
+    top: ${({ click }) => (click ? '80px' : "-42vh")};
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: #fff;
+    box-shadow: 0 5px 5px rgb(0 0 0 / 5%);
+  }
+  @media (max-width: 330px) {
+   height: 40vh;
+  }
+`;
+
+export const NavTitle = styled.p`
+   margin-top: 22px;
+   font-size: 16px;
+   color:  #313131 !important;
+   & span {
+      border: 1px solid ${systemColors.btnColor};
+      display: inline-block;
+      margin-left: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      @media (max-width: 576px) {
+         margin-left: 0;
+      }
+   }
+   @media (max-width: 576px) {
+      width: 80%;
+   }
+   @media (max-width: 245px) {
+      font-size: 12px;
+   }
 `

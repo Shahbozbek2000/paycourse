@@ -14,5 +14,6 @@ zoom: 90%;
 
 @media (max-width: 576px) {
    zoom: 62%;
+   display: none;
 }
 `

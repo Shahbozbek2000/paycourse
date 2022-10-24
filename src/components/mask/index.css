@@ -5,7 +5,7 @@
    overflow: hidden;
    position: relative;
    display: flex;
-   flex-wrap: wrap;
+   /* flex-wrap: wrap; */
    border-radius: 6px;
    align-items: stretch;
    border: 1px solid #dadada;
@@ -88,11 +88,11 @@
    }
 
    .input-group-prepend .input-group-text {
-      font-size: 16px !important;
+      font-size: 14px !important;
    }
 
    .input-group .form-control-new {
-      font-size: 16px !important;
+      font-size: 14px !important;
       padding: 0 !important;
    }
 }

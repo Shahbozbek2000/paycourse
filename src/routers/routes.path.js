@@ -5,13 +5,15 @@ const Register = lazy(() => import('pages/auth/container/page'))
 const Login = lazy(() => import('pages/auth/components/login'))
 const NotFound = lazy(() => import('pages/404'))
 const MainAuthorization = lazy(() => import('pages/auth/components/main'))
+const PaymentAccepted = lazy(() => import('pages/payment-accepted'))
+
 
 
 
 export const routes = [
    {
       path: SystemPath.MAIN_URL,
-      element: <MainAuthorization/>
+      element: <MainAuthorization />
    },
    {
       path: SystemPath.HOME_URL,
@@ -23,10 +25,14 @@ export const routes = [
    },
    {
       path: SystemPath.LOGIN_URL,
-      element: <Login/>
+      element: <Login />
+   },
+   {
+      path: SystemPath.PAYMENT_ACCEPTED_URL,
+      element: <PaymentAccepted />
    },
    {
       path: '*',
-      element: <NotFound/>
+      element: <NotFound />
    }
 ]

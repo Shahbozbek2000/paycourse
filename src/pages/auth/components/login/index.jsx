@@ -11,12 +11,12 @@ import { useForm, Controller } from 'react-hook-form'
 import { InputComponent } from 'components/input/controllerInput'
 import { Error, Footer, Label } from 'styles/globalStyles'
 import { CrudButton } from 'components/button'
-import { useAuth } from '../hooks/useAuth'
 import Cookies from 'js-cookie'
 import { Token } from 'services/token'
 import { Link, useNavigate } from 'react-router-dom'
 import { PhoneMask } from 'components/mask'
 import { InfoCircleFilled } from '@ant-design/icons'
+import { useLogin } from '../hooks/useLogin'
 
 const Login = () => {
   const {
@@ -27,7 +27,7 @@ const Login = () => {
   } = useForm()
   const navigate = useNavigate()
   const [token, setToken] = useState(null)
-  const { onSubmit, isLoading } = useAuth()
+  const { onLogin, isLoading } = useLogin()
 
   useEffect(() => {
     let token = Cookies.get(Token)
@@ -41,10 +41,9 @@ const Login = () => {
   return (
     <FormProvider>
       {!token ? (
-        <Form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+        <Form className="login-form" onSubmit={handleSubmit(onLogin)}>
           <FormHeader>
             <h1>С1 вместе с РУДН</h1>
-            <p>Пройти регистрацию</p>
           </FormHeader>
           <FormBody>
             <FormRow gutter={[16, 16]}>

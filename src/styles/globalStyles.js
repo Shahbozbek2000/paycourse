@@ -61,6 +61,13 @@ export const Form = styled.form`
     min-width: 350px;
   }
   @media (max-width: 375px) {
-    width: 320px;
+    &.main-form {
+      min-width: 320px;
+    }
+  }
+  @media (max-width: 335px) {
+    &.main-form {
+      min-width: 300px;
+    }
   }
 `

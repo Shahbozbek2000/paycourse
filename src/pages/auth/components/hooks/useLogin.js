@@ -5,23 +5,20 @@ import { useState } from "react"
 import Cookies from "js-cookie"
 import { Token } from "services/token"
 
-export const useAuth = () => {
+export const useLogin = () => {
    const navigate = useNavigate()
    const [isLoading, setIsLoading] = useState(false)
-   const onSubmit = async (data) => {
+
+   const onLogin = async (data) => {
       try {
          let payload = {
-            name: data.name,
-            surname: data.surname,
-            last_name: data.last_name,
             phone: `+998${data.phone.replace(/ /g, '')
             .replace(/X/g, '')
             .replace(/_/g, '')}`,
-            password: data.password,
-            tos: true
+            password: data.password
          }
          setIsLoading(true)
-         let response = await authApi.register(payload)
+         let response = await authApi.login(payload)
          toast.success("Вы успешно вошли в систему")
          Cookies.set(Token, response?.token);
          navigate('/main')
@@ -35,7 +32,7 @@ export const useAuth = () => {
       }
    }
    return {
-      onSubmit,
+      onLogin,
       isLoading
    }
 }

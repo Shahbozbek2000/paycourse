@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const PaymentProvider = styled.div`
 display: flex;
+flex-direction: column;
 width: 400px;
 margin-top: 16px;
 & h3 {
@@ -73,4 +74,10 @@ img{
    }
 }
 `
-
+export const ButtonWrapper = styled.div`
+display: flex;
+width: 100%;
+@media (max-width: 450px) {
+   flex-direction: column;
+}
+`

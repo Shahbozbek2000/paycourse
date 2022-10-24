@@ -23,6 +23,11 @@ border: 2px solid ${systemColors.btnColor};
    width: 250px;
    font-size: 22px;
 }
+@media (max-width: 340px) {
+   width: 220px;
+   height: 50px;
+   font-size: 18px;
+}
 `
 
 export const FormPanelWrap = styled.div`
@@ -48,5 +53,6 @@ display: none;
    border: none;
    margin: 0;
    height: auto;
+   font-size: 13px;
 }
 `

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { systemColors } from 'styles/colors'
 
 export const Container = styled.div`
   width: 83%;
@@ -8,5 +9,6 @@ export const Container = styled.div`
  align-items: center;
  justify-content: space-between;
  margin: 0 auto;
+ background-color: ${systemColors.mainWhite};
   }
 `

@@ -38,7 +38,7 @@ class Api {
     let headers = {};
     if (accessToken) {
       headers = {
-        'x-access-token': accessToken
+        'x-access-tokens': accessToken
       };
     }
     try {
