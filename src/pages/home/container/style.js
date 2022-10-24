@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 83%;
   margin: 32px auto;
   &.navbar-container {
+    width: 90%;
     display: flex;
  align-items: center;
  justify-content: space-between;

@@ -28,6 +28,18 @@ export const Label = styled.label`
 
 export const Footer = styled.div`
   margin: 8px 0 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+  & span {
+    & a {
+      display: block;
+    }
+    @media (max-width: 450px) {
+      & a {
+        display: inline-flex;
+      }
+    }
+  }
 `
 
 export const FormProvider = styled.div`

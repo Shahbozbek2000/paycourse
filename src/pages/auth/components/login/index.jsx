@@ -92,8 +92,7 @@ const Login = () => {
                     <Error>
                       <InfoCircleFilled /> Не менее 7 символов!
                     </Error>
-                  ))
-                }
+                  ))}
               </Col>
               <Col span={24} md={24}>
                 <CrudButton
@@ -104,8 +103,7 @@ const Login = () => {
                   isLoading={isLoading}
                 />
                 <Footer>
-                  Новое на нашей платформе?{' '}
-                  <Link to="/register">Завести аккаунт</Link>
+                  <span>Забыл пароль? Позвонить по этому номеру: <a href='tel:+998993975556'>+998 (99)-397-55-56</a></span> 
                 </Footer>
               </Col>
             </FormRow>

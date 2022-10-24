@@ -12,12 +12,12 @@ import {
 import Logo from 'assets/images/logo.png'
 import { DownloadOutlined } from '@ant-design/icons'
 import { Container } from 'pages/home/container/style'
-import Calendar from 'components/calendar'
 import { Controller, useForm } from 'react-hook-form'
 import { useMutateExcel } from './useMutateExcel'
 import { Sling as Hamburger } from 'hamburger-react'
 import { systemColors } from 'styles/colors'
 import { Logout } from 'components/logout'
+import TwoDate from 'components/calendar/twoDate'
 
 export const Navbar = () => {
   const { control, handleSubmit } = useForm()
@@ -63,11 +63,10 @@ export const Navbar = () => {
             Познокомностъ прохожения тестирований С1 <span>Без очереди</span>{' '}
           </NavTitle>
           <Form onSubmit={handleSubmit(onSubmit)}>
-            <Calendar
+            <TwoDate
               Controller={Controller}
               control={control}
               nameProps="date"
-              picker="date"
               plProps="dd/mm/yyyy"
               format="DD.MM.YYYY"
               required={true}

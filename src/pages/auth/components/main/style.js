@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { systemColors } from "styles/colors";
 
 export const FormPanel = styled.button`
-margin: 12px 0;
+margin: 6px 0;
 width: 300px;
 height: 65px;
 border-radius: 6px;
@@ -32,21 +32,15 @@ border: 2px solid ${systemColors.btnColor};
 
 export const FormPanelWrap = styled.div`
 display: flex;
+flex-direction: column;
 align-items: center;
 justify-content: center;
-@media (max-width: 600px) {
-   flex-direction: column-reverse;
-}
+padding: 8px 0;
 `
 
 export const FormPanelInfo = styled.p`
-border: 1px solid #dadada;
-width: 30%;
-height: 65px;
-margin:2px 0 0px 12px;
-padding: 4px 8px;
-border-radius: 6px;
-display: none;
+/* display: none; */
+color: rgba(0, 0, 0, 0.5);
 @media (max-width: 600px) {
    display: block;
    width: 100%;

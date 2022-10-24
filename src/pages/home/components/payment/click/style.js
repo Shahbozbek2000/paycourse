@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { systemColors } from "styles/colors";
 
 export const PaymentProvider = styled.div`
 display: flex;
@@ -37,6 +38,9 @@ box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 margin: 16px 0;
 &.payme-btn {
    padding-top: 18px;
+}
+&.active-method {
+   border: 2px solid ${systemColors.btnColor};
 }
 &:nth-child(2) {
    margin-left: 16px;

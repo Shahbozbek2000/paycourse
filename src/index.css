@@ -51,3 +51,11 @@ body::-webkit-scrollbar {
 }
 
 
+.ant-picker-panel-container .ant-picker-panels {
+  display: flex;
+  flex-wrap: wrap !important;
+}
+
+ul {
+  margin-top: auto !important;
+}

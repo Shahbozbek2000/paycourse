@@ -8,8 +8,6 @@ export const CustomCalendar = styled(DatePicker)`
   background: #fff;
   border: 1px solid #eee;
   border-radius: 8px;
-  /* margin-top: 16px !important; */
-  /* margin-bottom: 8px !important; */
   &:focus {
     box-shadow: none !important;
     background: #fff;
@@ -23,7 +21,7 @@ export const CustomCalendar = styled(DatePicker)`
 `;
 export const CustomTwoCalendar = styled(RangePicker)`
   width: 100%;
-  height: 35px;
+  height: 40px;
   background: #ffffff;
   border: 1px solid #bcc6d4;
   border-radius: 4px;
