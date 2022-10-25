@@ -13,7 +13,7 @@ import { Error, Footer, Label } from 'styles/globalStyles'
 import { CrudButton } from 'components/button'
 import Cookies from 'js-cookie'
 import { Token } from 'services/token'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { PhoneMask } from 'components/mask'
 import { InfoCircleFilled } from '@ant-design/icons'
 import { useLogin } from '../hooks/useLogin'
@@ -37,8 +37,6 @@ const Login = () => {
     setToken(token)
     // eslint-disable-next-line
   }, [])
-
-  console.log(watch('phone'), 'phone')
 
   return (
     <FormProvider>

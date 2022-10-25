@@ -1,7 +1,7 @@
 import React from 'react'
 import Click from 'assets/images/click.png'
-import { ButtonWrapper, ClickWrapper, PaymentProvider } from './style'
 import Payme from 'assets/images/payme.svg'
+import { ButtonWrapper, ClickWrapper, PaymentProvider } from './style'
 import { usePayment } from 'pages/home/hooks/usePayment'
 
 export const PaymentMethods = ({ hasChecked }) => {

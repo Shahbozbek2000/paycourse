@@ -17,13 +17,13 @@ import { useMutateExcel } from './useMutateExcel'
 import { Sling as Hamburger } from 'hamburger-react'
 import { systemColors } from 'styles/colors'
 import { Logout } from 'components/logout'
-import TwoDate from 'components/calendar/twoDate'
+import TwoDate from 'components/calendar/double_calendar'
 
 export const Navbar = () => {
   const { control, handleSubmit } = useForm()
   const onSubmit = useMutateExcel()
   const [click, setClick] = useState(false)
-  const [button, setButton] = useState(true)
+  const [, setButton] = useState(true)
 
   const showButton = () => {
     if (window.innerWidth <= 960) {

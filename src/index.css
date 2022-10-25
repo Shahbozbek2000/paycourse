@@ -9,7 +9,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    box-shadow: 0 0 0 30px white inset !important;
 }
 
 .ant-checkbox .ant-checkbox-inner {
@@ -63,4 +63,9 @@ ul {
 .ant-btn-primary {
   background-color: #33cccc !important;
   border-color: #33cccc !important;
+}
+
+.ant-btn:hover {
+  border-color: #33cccc !important;
+  color: #33cccc !important;
 }
