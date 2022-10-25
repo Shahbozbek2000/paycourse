@@ -39,7 +39,6 @@ export const Navbar = () => {
 
   const handleClick = () => {
     setClick(!click)
-    localStorage.setItem('click', click)
   }
 
   return (

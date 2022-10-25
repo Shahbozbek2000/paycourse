@@ -59,3 +59,8 @@ body::-webkit-scrollbar {
 ul {
   margin-top: auto !important;
 }
+
+.ant-btn-primary {
+  background-color: #33cccc !important;
+  border-color: #33cccc !important;
+}

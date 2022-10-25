@@ -5,7 +5,6 @@ import {
    NotFoundBody,
    NotFoundButton,
  } from './style';
- import NotFoundImage from "assets/svg/notFound/404.svg"
 import { useNavigate } from 'react-router-dom';
 
 const NotFound = () => {
@@ -13,7 +12,6 @@ const NotFound = () => {
    return (
       <NotFoundProvider>
       <PictureTop>
-        {/* <img src={NotFoundImage} alt="not-found" /> */}
         <h1>404</h1>
       </PictureTop>
       <NotFoundBody>
