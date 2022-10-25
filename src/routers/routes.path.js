@@ -7,9 +7,6 @@ const NotFound = lazy(() => import('pages/404'))
 const MainAuthorization = lazy(() => import('pages/auth/components/main'))
 const PaymentAccepted = lazy(() => import('pages/payment-accepted'))
 
-
-
-
 export const routes = [
    {
       path: SystemPath.MAIN_URL,

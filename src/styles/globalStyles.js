@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { systemColors } from "./colors";
 
+
 export const Error = styled.div`
   color: ${systemColors.errorColor};
   font-size: 12px;

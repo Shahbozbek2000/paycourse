@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { memo, useEffect, useState } from 'react'
 import Contract from '../components/contract'
 import { PaymentMethod } from '../components/payment'
@@ -11,7 +12,6 @@ import { useNavigate } from 'react-router-dom'
 const Home = () => {
   const navigate = useNavigate()
   const [hasChecked, setHasChecked] = useState(false)
-
   useEffect(() => {
     if (!Cookies.get(Token)) {
       navigate('/')

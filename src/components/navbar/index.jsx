@@ -39,6 +39,7 @@ export const Navbar = () => {
 
   const handleClick = () => {
     setClick(!click)
+    localStorage.setItem('click', click)
   }
 
   return (
@@ -52,7 +53,7 @@ export const Navbar = () => {
             duration={0.4}
             rounded
             className="hamburger"
-            size={25}
+            size={28}
             color={`${systemColors.btnColor}`}
             toggled={click}
             toggle={setClick}
