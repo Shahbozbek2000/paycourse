@@ -44,7 +44,7 @@ export const Navbar = () => {
   return (
     <NavbarProvider>
       <Container className="navbar-container">
-        <NavbarBrand>
+        <NavbarBrand to='/main'>
           <Image src={Logo} alt="logo" />
         </NavbarBrand>
         <MobileIcon onClick={handleClick} click={click}>

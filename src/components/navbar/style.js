@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { systemColors } from "styles/colors";
+import { Link } from "react-router-dom";
 
 export const NavbarProvider = styled.div`
  position: sticky;
@@ -19,7 +20,7 @@ export const NavbarProvider = styled.div`
     align-items: center;
    }
    `
-export const NavbarBrand = styled.div`
+export const NavbarBrand = styled(Link)`
 cursor: pointer;
 /* padding: 16px 0; */
 `
