@@ -37,7 +37,6 @@ const Login = () => {
     setToken(token)
     // eslint-disable-next-line
   }, [])
-
   return (
     <FormProvider>
       {!token ? (

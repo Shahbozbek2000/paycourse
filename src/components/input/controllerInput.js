@@ -14,14 +14,18 @@ export function InputComponent({
   readOnly,
   style,
   errors,
-  autoComplete='off'
+  autoComplete = 'off'
 }) {
   return (
     <>
       <Controller
         control={control}
         name={nameProps}
-        rules={{ required: required, minLength: minLength }}
+        rules={{
+          required: required,
+          minLength: minLength,
+          pattern: /^[a-zA-Z0-9_.,-@'`"?! ]*$/,
+        }}
         render={({
           field: { onChange, onBlur, value, name, ref },
           fieldState: { invalid, isTouched, isDirty, error },
