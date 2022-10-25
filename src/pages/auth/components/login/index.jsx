@@ -38,6 +38,8 @@ const Login = () => {
     // eslint-disable-next-line
   }, [])
 
+  console.log(watch('phone'), 'phone')
+
   return (
     <FormProvider>
       {!token ? (

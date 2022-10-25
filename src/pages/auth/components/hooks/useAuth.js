@@ -14,9 +14,9 @@ export const useAuth = () => {
             name: data.name,
             surname: data.surname,
             last_name: data.last_name,
-            phone: `+998${data.phone.replace(/ /g, '')
+            phone: data.phone.replace(/ /g, '')
             .replace(/X/g, '')
-            .replace(/_/g, '')}`,
+            .replace(/_/g, ''),
             password: data.password,
             tos: true
          }

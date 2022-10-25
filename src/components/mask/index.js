@@ -19,9 +19,9 @@ export function PhoneMask(props) {
          <div>
             <span>{title}</span>
             <div className={errors?.hasOwnProperty('phone') ? 'error' : 'input-group'}>
-               <div className="input-group-prepend">
+               {/* <div className="input-group-prepend">
                   <span className="input-group-text">+998</span>
-               </div>
+               </div> */}
                <Controller
                   control={control}
                   name={nameProps}
@@ -36,9 +36,9 @@ export function PhoneMask(props) {
                         value={value}
                         onChange={onChange}
                         name={name}
-                        placeholder="-- --- -- --"
+                        placeholder="+998 -- --- -- --"
                         className={'form-control-new'}
-                        mask="(99) 999 99 99"
+                        mask="+\9\98 99 999 99 99"
                         label={label}
                         required={required}
                         onBlur={onBlur}

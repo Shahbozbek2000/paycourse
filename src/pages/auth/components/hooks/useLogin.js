@@ -12,9 +12,9 @@ export const useLogin = () => {
    const onLogin = async (data) => {
       try {
          let payload = {
-            phone: `+998${data.phone.replace(/ /g, '')
+            phone: data.phone.replace(/ /g, '')
             .replace(/X/g, '')
-            .replace(/_/g, '')}`,
+            .replace(/_/g, ''),
             password: data.password
          }
          setIsLoading(true)
