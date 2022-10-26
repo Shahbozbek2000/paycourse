@@ -1,0 +1,20 @@
+name: Node.js Deploy
+
+on:
+  push:
+    branches: [ odya ]
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+       
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.IP }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.KEY }}
+          script: ./projects/paycourse/deploy.sh
