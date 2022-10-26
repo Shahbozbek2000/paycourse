@@ -2,7 +2,7 @@ name: Node.js Deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [ odya ]
     
 jobs:
   deploy:
