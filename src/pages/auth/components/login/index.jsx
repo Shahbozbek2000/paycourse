@@ -28,6 +28,7 @@ const Login = () => {
   const navigate = useNavigate()
   const [token, setToken] = useState(null)
   const { onLogin, isLoading } = useLogin()
+  const [visiblePassword, setVisiblePassword] = useState(false)
 
   useEffect(() => {
     let token = Cookies.get(Token)
@@ -37,6 +38,10 @@ const Login = () => {
     setToken(token)
     // eslint-disable-next-line
   }, [])
+  
+  
+
+
   return (
     <FormProvider>
       {!token ? (
@@ -71,7 +76,10 @@ const Login = () => {
                   Controller={Controller}
                   control={control}
                   nameProps="password"
-                  type="password"
+                  hasPassword={true}
+                  type={visiblePassword ? 'text' : 'password'}
+                  setVisiblePassword={setVisiblePassword}
+                  visiblePassword={visiblePassword}
                   plProps="Пароль: Не менее 7 символов"
                   label="Имя*"
                   autoComplete="new-password"
@@ -92,6 +100,7 @@ const Login = () => {
                       <InfoCircleFilled /> Не менее 7 символов!
                     </Error>
                   ))}
+               
               </Col>
               <Col span={24} md={24}>
                 <CrudButton
@@ -102,7 +111,10 @@ const Login = () => {
                   isLoading={isLoading}
                 />
                 <Footer>
-                  <span>Забыл пароль? Позвонить по этому номеру: <a href='tel:+998993975556'>+998 (99)-397-55-56</a></span> 
+                  <span>
+                    Забыл пароль? Позвонить по этому номеру:{' '}
+                    <a href="tel:+998993975556">+998 (99)-397-55-56</a>
+                  </span>
                 </Footer>
               </Col>
             </FormRow>

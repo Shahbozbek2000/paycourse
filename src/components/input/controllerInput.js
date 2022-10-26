@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FormGroupProvider, Input } from './style';
+import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons'
+import { VisiblePassword } from 'pages/auth/components/login/style';
+import 'antd/dist/antd.css';
 
 export function InputComponent({
   Controller,
@@ -14,8 +17,17 @@ export function InputComponent({
   readOnly,
   style,
   errors,
-  autoComplete = 'off'
+  autoComplete = 'off',
+  hasPassword = false,
+  setVisiblePassword,
+  visiblePassword
 }) {
+  const [showPassword, setShowPassword] = useState(false)
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword)
+    setVisiblePassword(!visiblePassword)
+  }
   return (
     <>
       <Controller
@@ -31,7 +43,7 @@ export function InputComponent({
           fieldState: { invalid, isTouched, isDirty, error },
           formState: { errors },
         }) => (
-          <FormGroupProvider>
+          <FormGroupProvider className={hasPassword ? 'form-password' : ''}>
             <Input
               className={className}
               oneTap
@@ -49,6 +61,15 @@ export function InputComponent({
               errors={errors}
               autoComplete={autoComplete}
             />
+            {
+              hasPassword &&
+              (
+                <VisiblePassword onClick={handleShowPassword}>
+                  {showPassword ? <EyeTwoTone /> : <EyeInvisibleOutlined />}
+                </VisiblePassword>
+              )
+            }
+
           </FormGroupProvider>
         )}
       />

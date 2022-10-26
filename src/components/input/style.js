@@ -29,11 +29,15 @@ export const Input = styled.input`
     border: 1px solid #33CCCC;
      }
 `;
+
 export const FormGroupProvider = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  span {
+  &.form-password {
+    position: relative;
+  }
+  /* span {
     margin-left: 8px;
     width: 16px;
     height: 16px;
@@ -45,35 +49,6 @@ export const FormGroupProvider = styled.div`
     color: #ddd;
     font-size: 12px;
     cursor: help;
-  }
+  } */
 `;
 
-// export const FormInput = styled.input`
-//   width: 100%;
-//   height: ${(props) => props.propsHeight};
-//   background-color: ${systemColors.mainBackground} !important;
-//   border-radius: 8px;
-//   font-family: 'Montserrat', sans-serif !important;
-//   border: 1px solid transparent;
-//   margin-top: 4px;
-//   box-shadow: inset 0 0 0 0 !important;
-
-//   &::placeholder {
-//     font-weight: 500;
-//     font-size: 14px;
-//     font-family: 'Montserrat', sans-serif;
-//   }
-//   &:-webkit-autofill {
-//     background: #fff !important;
-//   }
-//   &.error-input {
-//     border: 1px solid red !important;
-//   }
-//   &.error {
-//     border: 1px solid ${systemColors.errorColor} !important;
-//     &:focus {
-//       border: 1px solid ${systemColors.errorColor} !important;
-//       box-shadow: inset 0 0 0 0 !important;
-//     }
-//   }
-// `;

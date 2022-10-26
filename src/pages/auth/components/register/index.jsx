@@ -22,6 +22,7 @@ const RegisterForm = () => {
   const navigate = useNavigate()
   const [token, setToken] = useState(null)
   const { onSubmit, isLoading } = useAuth()
+  const [visiblePassword, setVisiblePassword] = useState(false)
 
   useEffect(() => {
     let token = Cookies.get(Token)
@@ -126,7 +127,10 @@ const RegisterForm = () => {
                   control={control}
                   nameProps="password"
                   plProps="Пароль: Не менее 7 символов"
-                  type="password"
+                  hasPassword={true}
+                  type={visiblePassword ? 'text' : 'password'}
+                  setVisiblePassword={setVisiblePassword}
+                  visiblePassword={visiblePassword}
                   label="Имя*"
                   errors={errors}
                   className={
