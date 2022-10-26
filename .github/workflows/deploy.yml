@@ -17,4 +17,4 @@ jobs:
           host: ${{ secrets.IP }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.KEY }}
-          script: ./deploy.sh
+          script: ./projects/paycourse/deploy.sh
