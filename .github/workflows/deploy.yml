@@ -1,0 +1,23 @@
+name: Node.js Deploy
+
+on:
+  push:
+    branches: [ master ]
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [16.x]
+        
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.IP }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: cd /projects/paycourse && git checkout . && git pull && yarn run build && rm -R /var/www/padar.uz/ && mkdir /var/www/padar.uz && cp -a build/. /var/www/padar.uz/
