@@ -19,5 +19,5 @@ jobs:
         with:
           host: ${{ secrets.IP }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
+          password: ${{ secrets.KEY }}
           script: cd /projects/paycourse && git checkout . && git pull && yarn run build && rm -R /var/www/padar.uz/ && mkdir /var/www/padar.uz && cp -a build/. /var/www/padar.uz/
