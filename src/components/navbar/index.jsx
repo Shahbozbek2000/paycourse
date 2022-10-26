@@ -63,7 +63,7 @@ export const Navbar = () => {
         </MobileIcon>
         <NavMenu click={click}>
           <NavTitle>
-            Познокомностъ прохожения тестирований С1 <span>Без очереди</span>{' '}
+            Познокомностъ прохожения тестирований С1 <span>Без очереди</span>
           </NavTitle>
           
           {hasRole !== 'user' ? (
