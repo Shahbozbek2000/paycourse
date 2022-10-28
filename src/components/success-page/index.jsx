@@ -1,12 +1,17 @@
-import React from 'react';
-import {  Result } from 'antd';
+import React from 'react'
+import { Result } from 'antd'
 
-export const SuccessPage = () => {
-   return (
+export const SuccessPage = ({ socialParams }) => {
+  return (
+    <>
       <Result
-      status="success"
-      title="Ваш платеж успешно произведен!"
-    />
-   );
+        status={socialParams?.payment_status === '0' ? 'error' : 'success'}
+        title={
+          socialParams?.payment_status === '0'
+            ? 'Платеж не прошел!'
+            : 'Ваш платеж успешно произведен!'
+        }
+      />
+    </>
+  )
 }
-
