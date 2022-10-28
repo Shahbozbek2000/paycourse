@@ -1,6 +1,6 @@
 import React from 'react'
 import Click from 'assets/images/click.png'
-import Payme from 'assets/images/payme.svg'
+// import Payme from 'assets/images/payme.svg'
 import { ButtonWrapper, ClickWrapper, PaymentProvider } from './style'
 import { usePayment } from 'pages/home/hooks/usePayment'
 
@@ -18,13 +18,14 @@ export const PaymentMethods = ({ hasChecked }) => {
         >
           <img src={Click} alt="click" />
         </ClickWrapper>
-        <ClickWrapper
+        <div/>
+        {/* <ClickWrapper
           onClick={() => sendPayment('payme')}
           disabled={!hasChecked}
           hasChecked={hasChecked}
         >
           <img src={Payme} alt="Payme" />
-        </ClickWrapper>
+        </ClickWrapper> */}
       </ButtonWrapper>
     </PaymentProvider>
   )

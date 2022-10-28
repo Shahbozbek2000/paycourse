@@ -26,7 +26,9 @@ width: 250px !important;
 }
 `
 export const ClickWrapper = styled.button`
-width:280px;
+/* width:280px; */
+width: 100%;
+height: 120px;
 border:2px solid transparent;
 background-color: #fff;
 border-radius:8px;
@@ -63,6 +65,9 @@ img{
    object-fit:contain;
    object-position:center;
 }
+@media (max-width: 576px) {
+   height: auto;
+}
 @media (max-width: 450px) {
    padding:32px 24px;
    width: 100%;
@@ -80,8 +85,11 @@ img{
 `
 export const ButtonWrapper = styled.div`
 display: flex;
-width: 100%;
+width: 300px;
 @media (max-width: 450px) {
    flex-direction: column;
+}
+@media (max-width: 576px) {
+   width: 100%;
 }
 `
