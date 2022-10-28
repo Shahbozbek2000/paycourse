@@ -6,11 +6,10 @@ export const SuccessPage = ({ socialParams }) => {
   return (
     <>
       <Result
-        status={socialParams?.payment_status == 0 ? 'error' : 'success'}
+        status={socialParams?.payment_status == 1 ? 'success' : 'error'}
         title={
-          socialParams?.payment_status == 0
-            ? 'Платеж не прошел!'
-            : 'Ваш платеж успешно произведен!'
+          socialParams?.payment_status == 1
+            ? 'Ваш платеж успешно произведен!' : 'Платеж не прошел!'
         }
       />
     </>
