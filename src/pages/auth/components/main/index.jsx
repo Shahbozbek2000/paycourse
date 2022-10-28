@@ -45,7 +45,7 @@ const MainAuthorization = () => {
             >
               Войти
             </FormPanel>
-            <FormPanelInfo>Если вы ранше прошли регистрацию!</FormPanelInfo>
+            <FormPanelInfo>Если вы раньше прошли регистрацию!</FormPanelInfo>
           </FormPanelWrap>
         </Form>
         ) : null
