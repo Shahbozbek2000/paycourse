@@ -27,7 +27,7 @@ const MainAuthorization = () => {
         (
           <Form className="main-form">
           <FormHeader>
-            <h1>ООО «SERTIFIKAT SERVIS»</h1>
+            <h1>ООО "SERTIFIKAT SERVIS"</h1>
           </FormHeader>
           <FormPanelWrap>
             <FormPanel
