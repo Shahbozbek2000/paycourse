@@ -12,5 +12,8 @@ export const Container = styled.div`
     justify-content: space-between;
     margin: 0 auto;
     background-color: ${systemColors.mainWhite};
+    @media (max-width: 576px) {
+      width: 100%;
+    }
   }
 `
