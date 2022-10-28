@@ -42,6 +42,7 @@ export const FormHeader = styled.div`
   & h1 {
     margin: 0;
     font-weight: 400;
+    font-size: 26px;
     color:#32323b;
     /* font-size: 20px; */
   } 

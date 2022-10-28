@@ -150,7 +150,7 @@ export const NavTitle = styled.p`
    & span {
       border: 1px solid #bcc6d4;
       display: inline-block;
-      margin-left: 12px;
+      margin-left: 10px;
       padding: 4px 8px;
       border-radius: 4px;
       @media (max-width: 576px) {

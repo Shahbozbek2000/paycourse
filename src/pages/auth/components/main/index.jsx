@@ -27,7 +27,7 @@ const MainAuthorization = () => {
         (
           <Form className="main-form">
           <FormHeader>
-            <h1>C1 вместе с<br/> ООО "SERTIFIKAT SERVIS"</h1>
+            <h1>Подготовка к сдаче экзамена<br/> С1 по программе РУДН</h1>
           </FormHeader>
           <FormPanelWrap>
             <FormPanel
