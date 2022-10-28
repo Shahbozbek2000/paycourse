@@ -55,11 +55,14 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6
 }
 @media (max-width: 576px) {
    margin-top: 12px;
+   width: 100%;
+   margin-left: 0;
+   height: 38px !important;
 }
 @media (max-width: 400px) {
    font-size: 14px;
    /* width: 170px; */
-   height: 40px;
+   /* height: 40px; */
 }
 @media (max-width: 1280px) {
    height: auto;
