@@ -37,7 +37,7 @@ const RegisterForm = () => {
       {!token ? (
         <Form onSubmit={handleSubmit(onSubmit)}>
           <FormHeader>
-            <h1>ООО "SERTIFIKAT SERVIS"</h1>
+            <h1>C1 вместе с<br/> ООО "SERTIFIKAT SERVIS"</h1>
             <p>Пройти регистрацию</p>
           </FormHeader>
           <FormBody>

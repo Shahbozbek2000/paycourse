@@ -38,10 +38,12 @@ export const FormRow = styled(Row)`
 export const FormHeader = styled.div`
     text-align: center;
     margin: 24px 0;
+
   & h1 {
     margin: 0;
     font-weight: 400;
     color:#32323b;
+    /* font-size: 20px; */
   } 
   & p {
     margin: 0;
