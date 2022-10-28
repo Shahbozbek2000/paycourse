@@ -46,6 +46,11 @@ export const FormHeader = styled.div`
   & p {
     margin: 0;
   }
+  @media (max-width: 576px) {
+    & h1 {
+      font-size: 20px;
+    }
+  }
 `
 export const FormBody = styled.div`
   width: 80%;

@@ -47,7 +47,7 @@ const Login = () => {
       {!token ? (
         <Form className="login-form" onSubmit={handleSubmit(onLogin)}>
           <FormHeader>
-            <h1>С1 вместе с РУДН</h1>
+            <h1>ООО «SERTIFIKAT SERVIS»</h1>
           </FormHeader>
           <FormBody>
             <FormRow gutter={[16, 16]}>
