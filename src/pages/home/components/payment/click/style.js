@@ -26,13 +26,12 @@ width: 250px !important;
 }
 `
 export const ClickWrapper = styled.button`
-/* width:280px; */
+width:280px;
 width: 100%;
-height: 120px;
 border:2px solid transparent;
 background-color: #fff;
 border-radius:8px;
-padding:8px 24px;
+padding:16px 24px;
 cursor:pointer;
 outline:none;
 transition:all .4s ease-in-out;
@@ -85,7 +84,7 @@ img{
 `
 export const ButtonWrapper = styled.div`
 display: flex;
-width: 300px;
+width: 100%;
 @media (max-width: 450px) {
    flex-direction: column;
 }
