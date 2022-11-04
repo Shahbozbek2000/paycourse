@@ -31,6 +31,12 @@ export const Footer = styled.div`
   margin: 8px 0 32px 0;
   display: flex;
   flex-wrap: wrap;
+  &.main-footer {
+    margin: -10px 0 0 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
   & span {
     & a {
       display: block;
@@ -38,7 +44,12 @@ export const Footer = styled.div`
     @media (max-width: 450px) {
       & a {
         display: inline-flex;
-      }
+      } 
+    }
+  }
+  @media (max-width: 600px) {
+    &.main-footer {
+      margin: 0;
     }
   }
 `
