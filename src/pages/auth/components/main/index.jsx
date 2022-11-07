@@ -42,7 +42,7 @@ const MainAuthorization = () => {
               Регистрация
             </FormPanel>
             <FormPanelInfo>
-              Если вы заходите в данный сайт в первые!
+              Если вы заходите в данный сайт впервые!
             </FormPanelInfo>
           </FormPanelWrap>
           <FormPanelWrap>
